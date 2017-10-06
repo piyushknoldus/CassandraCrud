@@ -9,6 +9,7 @@ trait CassandraProvider {
   val cassandraHostname = config.getString("cassandra.contact.points")
 
   val cassandraConn: Session = {
+    print("in am here --------------------------------------------------------------------->>>>")
     val cluster = new Cluster.Builder().withClusterName("Test Cluster").
       addContactPoints(cassandraHostname).build
     val session = cluster.connect
