@@ -9,13 +9,6 @@ import scala.collection.JavaConverters._
 object CassandraCrud extends App with CassandraProvider {
   private val log: Logger = LoggerFactory.getLogger(this.getClass())
 
-
-  // Connect to the cluster and keyspace "devjavasource"
-  log.info("*********Cluster Information *************")
-  log.info(" Cluster Name is: " + cassandraConn.getCluster.getClusterName)
-  log.info(" Cluster Configuration is: " + cassandraConn.getCluster.getConfiguration)
-  log.info(" Cluster Metadata is: " + cassandraConn.getCluster.getMetadata)
-  log.info(" Cluster Metrics is: " + cassandraConn.getCluster.getMetrics)
   // Retrieve all User details from Users table
   log.info("\n*********Retrive User Data Example *************")
   getUsersAllDetails(cassandraConn)
@@ -48,6 +41,10 @@ object CassandraCrud extends App with CassandraProvider {
         log.info("data: -"+row)
       }
     }
+
+  def demoMethod: String ={
+    "Hello"
+  }
 
 
 }
